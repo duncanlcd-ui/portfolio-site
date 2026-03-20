@@ -27,3 +27,16 @@ lightbox?.addEventListener('click', closeLightbox);
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
 });
+
+// ─── NAV TOGGLE ───────────────────────
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('nav ul');
+
+navToggle?.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+});
+
+// Close menu when a link is clicked
+navMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navMenu.classList.remove('open'));
+});

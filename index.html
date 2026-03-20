@@ -16,6 +16,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
 </nav>
 
 <main>
@@ -25,11 +26,21 @@
             Replace src with your chosen image.
             Works well as a single portrait or landscape photo.
         -->
-        <img
-            src="images/home/DSC04611.jpg"
-            alt="Scott Duncan"
-            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%221000%22%3E%3Crect fill=%22%23e8e8e8%22 width=%22800%22 height=%221000%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Courier New%22 font-size=%2214%22 fill=%22%23999%22%3Eimages/home/hero.jpg%3C/text%3E%3C/svg%3E'"
-        >
+        <img id="hero-img" src="" alt="Scott Duncan">
+        <script>
+            const heroImages = [
+                "images/home/DSC03957 copy.jpg",
+                "images/home/DSC04401 copy.jpg",
+                "images/home/DSC04425 copy.jpg",
+                "images/home/DSC04611.jpg",
+                "images/home/8 DSC04563 copy.jpg",
+                "images/home/oldport.jpg",
+                "images/home/person1.jpg",
+                "images/home/person2.jpg",
+                "images/home/smoke.jpg"
+            ];
+            document.getElementById('hero-img').src = heroImages[Math.floor(Math.random() * heroImages.length)];
+        </script>
     </div>
 </main>
 

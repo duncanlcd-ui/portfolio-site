@@ -180,8 +180,24 @@ main {
 .gallery-header .gallery-desc {
     font-size: 0.8rem;
     color: var(--muted);
-    max-width: 480px;
-    line-height: 1.6;
+    max-width: 560px;
+    line-height: 1.8;
+}
+
+.gallery-header .gallery-desc p {
+    margin-bottom: 0.85rem;
+}
+
+.gallery-header .gallery-desc p:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-essay-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 1rem !important;
 }
 
 .gallery-grid {
@@ -272,6 +288,30 @@ main {
 
 .exhibitions-list {
     max-width: 680px;
+}
+
+.exhibition-featured {
+    padding: 2rem 0 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+}
+
+.exhibition-featured-title {
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.35rem;
+}
+
+.exhibition-featured-venue {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.exhibition-featured-desc {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    max-width: 480px;
 }
 
 .exhibition-year-group {
@@ -435,4 +475,127 @@ main {
     display: inline-block;
     width: 5rem;
     letter-spacing: 0.04em;
+}
+
+/* ─── MOBILE NAV TOGGLE ───────────────── */
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-family: var(--font);
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text);
+    padding: 0;
+    line-height: 1;
+}
+
+/* ─── RESPONSIVE ──────────────────────── */
+
+@media (max-width: 768px) {
+
+    :root {
+        --pad: 1.25rem;
+        --nav-height: 3.25rem;
+    }
+
+    /* Nav */
+    .nav-toggle {
+        display: block;
+    }
+
+    .site-subtitle {
+        display: none;
+    }
+
+    .site-name {
+        font-size: 0.8rem;
+    }
+
+    nav ul {
+        display: none;
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 1.25rem var(--pad) 1.5rem;
+        border-bottom: 1px solid var(--border);
+        gap: 1.25rem;
+        z-index: 99;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        columns: 2;
+    }
+
+    .gallery-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+
+    /* About */
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-photo img {
+        max-width: 280px;
+    }
+
+    /* Collections */
+    .collections-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.75rem;
+    }
+
+    /* CV */
+    .cv-row {
+        grid-template-columns: 4rem 1fr;
+        gap: 0 1rem;
+    }
+
+    /* Exhibition */
+    .exhibition-item {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .exhibition-location {
+        grid-row: auto;
+        grid-column: auto;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .gallery-grid {
+        columns: 1;
+    }
+
+    .site-name {
+        font-size: 0.85rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.72rem;
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
