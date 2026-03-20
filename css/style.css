@@ -108,17 +108,12 @@ main {
 /* ─── HOME ────────────────────────────── */
 
 .home {
-    height: calc(100vh - var(--nav-height));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    width: 100%;
 }
 
 .home img {
-    height: calc(100vh - var(--nav-height));
-    max-width: 100%;
-    object-fit: contain;
+    width: 100%;
+    display: block;
 }
 
 /* ─── PORTFOLIO INDEX ─────────────────── */
